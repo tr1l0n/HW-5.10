@@ -25,8 +25,6 @@ export class App extends Component{
     const form = e.currentTarget;
     const name = form.elements.name.value;
     const number = form.elements.number.value;
-    console.log(this.state.contacts);
-    
     if (this.state.contacts.some(contact => contact.name.toLowerCase() === name.toLowerCase())) {
       alert(`${name} is already in contacts`);
       form.reset();
@@ -50,7 +48,7 @@ export class App extends Component{
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.id !== id)
     }));
-    localStorage.setItem('contacts-data', this.state.contacts);
+    // localStorage.setItem('contacts-data', this.state.contacts);
   }
   render() {
     const { contacts, filter } = this.state;
